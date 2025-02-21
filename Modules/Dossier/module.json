@@ -4,5 +4,9 @@
     "description": "",
     "keywords": [],
     "priority": 0,
+    "providers": [
+        "Modules\\Dossier\\Providers\\DossierServiceProvider",
+        "Modules\\Dossier\\Providers\\RouteServiceProvider"
+    ],
     "files": []
 }

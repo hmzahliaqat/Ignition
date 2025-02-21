@@ -25,6 +25,7 @@
         "psr-4": {
             "App\\": "app/",
             "Modules\\": "Modules/",
+            "Modules\\Dossier\\": "Modules/Dossier/app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
@@ -59,7 +60,8 @@
         "laravel": {
             "dont-discover": [],
             "providers": [
-                "Modules\\Dossier\\Providers\\DossierServiceProvider"
+                "Modules\\Dossier\\Providers\\DossierServiceProvider",
+                "Modules\\Dossier\\Providers\\RouteServiceProvider"
             ]
         }
     },
