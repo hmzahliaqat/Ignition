@@ -5,29 +5,32 @@ namespace Modules\Dossier\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Modules\Dossier\Emails\ContactMeMail;
+use Modules\Dossier\Http\Requests\ContactRequest;
 
 class EmailController extends Controller
 {
 
-    public function send(Request $request)
+    public function send(ContactRequest $request)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'message' => 'required|string',
-        ]);
+        try {
 
-        $data = $request->all();
+            $data = $request->all();
+            Mail::to('hmzah.liaqat@gmail.com')->send(new ContactMeMail($data));
 
-        Mail::to('hmzah.liaqat@gmail.com')->send(new ContactMeMail($data));
+            return response()->json([
+                'status' => 200,
+                'message' => 'Your message has been sent successfully!'
+            ], 200);
+        } catch (\Exception $e) {
+            Log::error('Mail sending failed: ' . $e->getMessage());
 
-        return response()->json([
-            'status' => JsonResponse::HTTP_OK,
-            'message' => 'Your message has been sent successfully!'
-        ] , JsonResponse::HTTP_OK);
-
+            return response()->json([
+                'status' => 500,
+                'message' => 'Email could not be sent. Error: ' . $e->getMessage()
+            ], 500);
+        }
     }
-
 }

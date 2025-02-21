@@ -15,7 +15,7 @@ class ContactMeMail extends Mailable
      * Create a new message instance.
      */
 
-     public $data;
+    public $data;
 
     public function __construct($data)
     {
@@ -27,6 +27,7 @@ class ContactMeMail extends Mailable
      */
     public function build(): self
     {
-        return $this->view('dossier::emails.contactMe');
+        return $this->view('dossier::emails.contactMe')
+            ->with(['data' => $this->data]);
     }
 }
