@@ -17,8 +17,7 @@ class EmailController extends Controller
     {
         try {
 
-            $data = $request->all();
-            Mail::to('hmzah.liaqat@gmail.com')->send(new ContactMeMail($data));
+            $this->sendEmal($request->all());
 
             return response()->json([
                 'status' => 200,
@@ -33,4 +32,10 @@ class EmailController extends Controller
             ], 500);
         }
     }
+
+    private function sendEmal($data)
+    {
+        Mail::to('hmzah.liaqat@gmail.com')->send(new ContactMeMail($data));
+    }
+
 }
