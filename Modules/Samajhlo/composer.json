@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/samajhlo",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Samajhlo\\": "app/",
+            "Modules\\Samajhlo\\Database\\Factories\\": "database/factories/",
+            "Modules\\Samajhlo\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Samajhlo\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Samajhlo",
+    "alias": "samajhlo",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Samajhlo\\Providers\\SamajhloServiceProvider"
+    ],
+    "files": []
+}
