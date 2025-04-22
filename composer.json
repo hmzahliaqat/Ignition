@@ -26,6 +26,7 @@
             "App\\": "app/",
             "Modules\\": "Modules/",
             "Modules\\Dossier\\": "Modules/Dossier/app/",
+            "Modules\\Samajhlo\\": "Modules/Samajhlo/app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

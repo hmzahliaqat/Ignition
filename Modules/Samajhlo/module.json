@@ -5,7 +5,9 @@
     "keywords": [],
     "priority": 0,
     "providers": [
-        "Modules\\Samajhlo\\Providers\\SamajhloServiceProvider"
+        "Modules\\Samajhlo\\Providers\\SamajhloServiceProvider",
+        "Modules\\Samajhlo\\Providers\\RouteServiceProvider"
+
     ],
     "files": []
 }
